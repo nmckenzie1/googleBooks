@@ -23,7 +23,7 @@ class AddBookBtn extends React.Component{
     render() {
         return (
           <div>
-          <Button type="light" onClick={() => 
+          <Button type="dark" onClick={() => 
             {this.postToDB(this.props)}
             }>
             Save Book

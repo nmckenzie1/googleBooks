@@ -47,8 +47,11 @@ class Saved extends Component {
                 {this.state.savedBooks.map(book => {
                   console.log(book)
                   return (
-                    <div>
-                      <BookListItem
+                    <div className= "border">
+                     <RemoveBookBtn
+                        onClick={() => this.deleteFromDB(book._id)}
+                      />
+                     <BookListItem
                         key={book._id}
                         authors={book.authors}
                         title={book.title}
@@ -57,9 +60,7 @@ class Saved extends Component {
                         thumbnail={book.thumbnail}
                       // delete={()=> this.deleteFromDB(book._id)}
                       />
-                      <RemoveBookBtn
-                        onClick={() => this.deleteFromDB(book._id)}
-                      />
+                      
                     </div>
                   )
 

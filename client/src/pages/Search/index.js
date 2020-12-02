@@ -51,13 +51,26 @@ class Search extends Component {
           <button  type="submit" className="btn m3 btn-dark "onClick={this.searchGBooks} >
             Search for Books
           </button>
+          <br />
+          <br />
+          <br />
+          
                    
 
           {(this.state.books && this.state.books.length > 0) ? 
           <BookList>
           {this.state.books.map(book => {
             return (
-              <div>
+              <div className="border">
+              <span>  </span><AddBookBtn
+              authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
+              title={book.volumeInfo.title}
+              synopsis={book.volumeInfo.description ? 
+                book.volumeInfo.description : "No Description Available"}
+              link={book.volumeInfo.infoLink}
+              thumbnail={book.volumeInfo.imageLinks.thumbnail ? 
+                book.volumeInfo.imageLinks.thumbnail : "#"}
+              />
               <BookListItem
               key={book.id} 
               authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
@@ -69,16 +82,7 @@ class Search extends Component {
                 book.volumeInfo.imageLinks.thumbnail : "#"}
               />
 
-              <AddBookBtn
-              authors={book.volumeInfo.authors ? book.volumeInfo.authors : ["No Author Available"]}
-              title={book.volumeInfo.title}
-              synopsis={book.volumeInfo.description ? 
-                book.volumeInfo.description : "No Description Available"}
-              link={book.volumeInfo.infoLink}
-              thumbnail={book.volumeInfo.imageLinks.thumbnail ? 
-                book.volumeInfo.imageLinks.thumbnail : "#"}
               
-              />
               </div>
             )
           })}
