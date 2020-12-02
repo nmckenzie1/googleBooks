@@ -16,13 +16,13 @@ export function BookList({children}) {
     render(){
      console.log(this.props)
 ;    return (
-      <li>
+      <div className= "m-2 ">
         <Container>
           <Row>
-            <Col size="xs-4 sm-2">
+            <Col size="md-2 sm-2">
               <Thumbnail src={this.props.thumbnail} />
             </Col>
-            <Col size="xs-6 sm-6">
+            <Col size="md-8 sm-6">
               <h3>{this.props.title}<span><h5>{this.props.authors.join(", ")}</h5></span></h3>
               <p>
                 {this.props.synopsis}
@@ -32,12 +32,12 @@ export function BookList({children}) {
                 href={this.props.link}
                 rel="noopener noreferrer"
               >
-                Go to book!
+                See book listing
               </a>
             </Col>
           </Row>
         </Container>
-      </li>
+      </div>
     );
     }
   }

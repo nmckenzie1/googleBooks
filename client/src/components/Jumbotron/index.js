@@ -4,8 +4,8 @@ import "./style.css"
 
 function Jumbotron() {
   return (
-    <div className="jumbotron text-center">
-      <h1><span><a className="white" id="jumboHead" href="/">FIND YO Books</a></span></h1>
+    <div className="jumbotron text-center text-white">
+      <h1>Find you some books!</h1>
         
       
     </div>
